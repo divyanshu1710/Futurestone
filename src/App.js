@@ -1,21 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
-import Home from './pages/Home'
-import Skill from './pages/Skillset'
-import Project from './pages/Projects'
-import Resume from './pages/Resume'
-import Contact from './pages/Contact'
+import Home from './pages/Home';
+import Skill from './pages/Skillset';
+import Project from './pages/Projects';
+import Resume from './pages/Resume';
+import Contact from './pages/Contact';
+import LoginPage from "./pages/LoginPage";
+import AddImagePage from "./pages/AddImagePage";
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Preloader from "./components/PreLoader"
-import ScrollToTop from "./components/ScrollToTop"
+import Preloader from "./components/PreLoader";
+import ScrollToTop from "./components/ScrollToTop";
 
 import "./App.css";
 import "./style.css";
@@ -23,6 +20,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const handleLogin = (username, password) => {
+    // Replace this with actual authentication logic
+    if (username === "admin" && password === "password") {
+      setIsAuthenticated(true); // Update the state
+      console.log(isAuthenticated)
+      return true;
+    }
+    return false;
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,10 +48,23 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skillset" element={<Skill />} />
-          <Route path="/project" element={<Project />} />
+          <Route path="/blogs" element={<Project />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+
+          {/* Login Page Route */}
+          <Route
+            path="/login"
+            element={<LoginPage onLogin={handleLogin} />}
+          />
+
+          {/* Redirect to /add-image if authenticated, otherwise redirect to /login */}
+          <Route
+            path="/add-image"
+            element={true ? <AddImagePage /> : <Navigate to="/login" />}
+          />
+
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>
