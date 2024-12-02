@@ -1,16 +1,16 @@
 html {
     --section-background-color: linear-gradient(
       to bottom left,
-      rgb(5, 8, 40), rgb(1, 4, 39)
+      rgb(239, 235, 229),rgb(239, 235, 229)
     );
   
     --image-gradient: linear-gradient(
       to bottom left,
-      rgba(5, 8, 40, 0.87), rgba(1, 4, 39, 0.925)
+      rgb(239, 235, 229), rgb(239, 235, 229)
     );
   
-    --imp-text-color: #7500fa;
-    --imp-bold-text-color: #7500fa;
+    --imp-text-color: rgb(98 62 42);
+    --imp-bold-text-color: rgb(98 62 42)a;
   }
   
   .yellow {
@@ -35,7 +35,7 @@ html {
     width: 100%;
     height: 100%;
     z-index: 999999;
-    background-color: #0c0513;
+    background-color: rgb(12, 5, 19);
     background-image: url(./assets/pre.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -79,7 +79,7 @@ html {
   /* Navbar Section  */
   /* --------- */
   .sticky {
-    background-color: #38007731 !important;
+    background-color: rgb(98 62 42) !important;
     transition: all 0.3s ease-out 0s !important;
     box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
     backdrop-filter: blur(15px) !important;
@@ -87,6 +87,7 @@ html {
   
   .navbar {
     position: fixed !important;
+    background-color: rgb(98 62 42) !important;
     transition: all 0.3s ease-out 0s !important;
     padding: 0.3rem 2rem !important;
     font-size: 1.2rem !important;
@@ -100,7 +101,7 @@ html {
   
   .navbar-toggler span {
     display: block !important;
-    background-color: #7500fa !important;
+    background-color:whitesmoke!important;
     height: 4px !important;
     width: 27px !important;
     margin-top: 5px !important;
@@ -154,7 +155,7 @@ html {
     }
   }
   .navbar-brand {
-    color: rgb(250, 250, 250) !important;
+    color:whitesmoke !important;
   }
   
   .logo {
@@ -163,7 +164,7 @@ html {
   }
   
   .navbar-nav .nav-link {
-    color: white !important;
+    color: whitesmoke !important;
     padding-right: 1rem !important;
     padding-left: 1rem !important;
   }
@@ -197,7 +198,7 @@ html {
     height: 5px;
     width: 0;
     border-radius: 16px;
-    background: #6e00fd;
+    background:whitesmoke;
     bottom: 1px;
     left: 0;
     z-index: -1;
@@ -269,7 +270,7 @@ html {
   
   .home-content {
     padding: 9rem 0 2rem !important;
-    color: whitesmoke;
+    color: rgb(98 62 42);
     text-align: left;
   }
   
@@ -284,18 +285,18 @@ html {
   }
   
   .main-name {
-    color: #7500fa;
+    color: rgb(98 62 42);
   }
   
   .Typewriter__wrapper {
     font-size: 2.2em !important;
-    color: #7500fa!important;
+    color:rgb(98 62 42)!important;
     /* color: #be6adf !important; */
     font-weight: 600 !important;
   }
   .Typewriter__cursor {
     font-size: 2.4em !important;
-    color: #7500fa !important;
+    color: rgb(98 62 42) !important;
   }
   
   @media (max-width: 767px) {
@@ -325,11 +326,11 @@ html {
     position: relative;
     padding-bottom: 70px !important;
     padding-top: 70px !important;
-    /* background-image: var(--image-gradient), url('./assets/home-bg.jpg'); */
+     background-image: var(--image-gradient), url('./assets/home-bg.jpg'); 
   }
   
   .home-about-description {
-    color: white !important;
+    color: rgb(98 62 42) !important;
     padding-top: 100px !important;
     padding-bottom: 20px !important;
     text-align: center;
@@ -344,7 +345,7 @@ html {
   .home-about-social {
     text-align: center !important;
     padding-top: 25px;
-    color: white !important;
+    color: rgb(98 62 42) !important;
   }
   
   .home-about-social-links {
@@ -463,7 +464,7 @@ html {
     padding-top: 150px !important;
     padding-bottom: 30px !important;
     background-image: var(--section-background-color) !important;
-    color: white !important;
+    color: rgb(98 62 42) !important;
   }
   
   .tech-icons {
