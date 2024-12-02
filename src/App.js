@@ -21,15 +21,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [load, upadateLoad] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const handleLogin = (username, password) => {
-    // Replace this with actual authentication logic
-    if (username === "admin" && password === "password") {
-      setIsAuthenticated(true); // Update the state
-      console.log(isAuthenticated)
-      return true;
-    }
-    return false;
-  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -55,13 +46,13 @@ function App() {
           {/* Login Page Route */}
           <Route
             path="/login"
-            element={<LoginPage onLogin={handleLogin} />}
+            element={<LoginPage setIsAuthenticated={setIsAuthenticated} />}
           />
 
-          {/* Redirect to /add-image if authenticated, otherwise redirect to /login */}
+          {/* Protected route */}
           <Route
             path="/add-image"
-            element={true ? <AddImagePage /> : <Navigate to="/login" />}
+            element={isAuthenticated ? <AddImagePage /> : <Navigate to="/login" />}
           />
 
           <Route path="*" element={<Navigate to="/" />} />
