@@ -40,7 +40,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/skillset" element={<Skill />} />
           <Route path="/blogs" element={<Project />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route path="/brochure" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
 
           {/* Login Page Route */}

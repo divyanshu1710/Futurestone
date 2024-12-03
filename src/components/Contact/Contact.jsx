@@ -50,7 +50,7 @@ const Contact = () => {
             <Row >
             <Col md={6} className="c-left" >
             <h1 >Get in Touch</h1>
-            <h1 className="yellow">Contact me</h1>
+            <h1 className="yellow">Contact Us</h1>
             </Col>
             <Col md={6} className="c-right">
                 <form ref={form} onSubmit={sendEmail}>
