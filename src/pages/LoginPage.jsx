@@ -1,21 +1,45 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import "../../src/style.css"; // Assuming the CSS file is named LoginPage.css
+import { useNavigate } from "react-router-dom";
+import config from "../utils/config";
 
-const LoginPage = ({ onLogin }) => {
+
+const LoginPage = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (onLogin(username, password)) {
-      // Successful login logic
-      alert("Logged in successfully!");
-    } else {
-      // Invalid login logic
-      alert("Invalid username or password");
+    try {
+      const response = await fetch(`${config.API_BASE_URL}/authorize`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success) {
+          setIsAuthenticated(true);
+          navigate("/add-image"); // Navigate on success
+        } else {
+          alert(data.message);
+        }
+      } else {
+        const error = await response.json();
+        alert(error.message || "Login failed");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+      console.error("Error:", error);
     }
   };
+  
 
   return (
     <Container className="login-container">
