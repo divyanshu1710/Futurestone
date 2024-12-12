@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import {
   AiOutlineTwitter
 } from "react-icons/ai";
@@ -20,16 +20,14 @@ const Footer = () => {
         </Col>
         <Col md="4" className="footer-copywright">
           <span>Copyright © {year}</span>
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Col>
-        <Col md="4" className="footer-body">
-          <Button
-            variant="primary"
-            onClick={() => navigate("/login")} // Direct navigation logic
-            style={{ marginLeft: '10px' }}
-          >
-            Go to Login
-          </Button>
+          {/* Added onClick to the logo */}
+          <img
+            src={logo}
+            className="img-fluid logo"
+            alt="brand"
+            onClick={() => navigate("/login")}
+            style={{ cursor: "pointer" }} // Adds a pointer cursor to indicate it's clickable
+          />
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
@@ -37,7 +35,7 @@ const Footer = () => {
               <a
                 href="https://twitter.com/19sajib"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="twitter"
               >
@@ -48,7 +46,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/in/19sajib/"
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedin"
               >
@@ -57,9 +55,9 @@ const Footer = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://wa.me/yourwhatsappnumber"  // Replace with your WhatsApp link
+                href="https://wa.me/yourwhatsappnumber" // Replace with your WhatsApp link
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="whatsapp"
               >
@@ -68,9 +66,9 @@ const Footer = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/yourusername/"  // Replace with your Instagram link
+                href="https://www.instagram.com/yourusername/" // Replace with your Instagram link
                 style={{ color: "white" }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="instagram"
               >
