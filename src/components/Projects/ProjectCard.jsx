@@ -1,42 +1,30 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const ProjectCard = (props) => {
+const ProjectCard = ({ imgPath, title, description, blogData }) => {
+  const navigate = useNavigate();
+
+  // Truncate the description to a fixed number of characters
+  const truncatedDescription = description.length > 300 
+    ? description.substring(0, 300) + "..."
+    : description;
+
   return (
-    <Card
-      className="project-card-view"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignContent: "space-between",
-      }}
-    >
-      <Card.Img
-        variant="top"
-        src={props.imgPath}
-        alt="card-img"
-        style={{
-          height: "200px",
-          objectFit: "contain",
-          alignSelf: "flex-start",
-          borderRadius: "10%",
-        }}
-      />
-      <Card.Body
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          alignContent: "space-between",
-        }}
-      >
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify",fontSize:"15px" }}>
-          {props.description}
-        </Card.Text>
+    <Card className="project-card-view">
+      <Card.Img variant="top" src={imgPath} alt={title} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{truncatedDescription}</Card.Text>
+        <Button
+          variant="primary"
+          onClick={() => navigate("/blog-details", { state: { blog: blogData } })}
+        >
+          See More
+        </Button>
       </Card.Body>
     </Card>
   );
 };
+
 export default ProjectCard;

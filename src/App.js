@@ -8,6 +8,8 @@ import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import LoginPage from "./pages/LoginPage";
 import AddImagePage from "./pages/AddImagePage";
+import BlogDetails from "./pages/BlogDetails";
+
 
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -42,6 +44,7 @@ function App() {
           <Route path="/blogs" element={<Project />} />
           <Route path="/brochure" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog-details" element={<BlogDetails />} />
 
           {/* Login Page Route */}
           <Route
@@ -64,3 +67,4 @@ function App() {
 }
 
 export default App;
+
