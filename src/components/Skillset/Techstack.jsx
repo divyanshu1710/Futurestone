@@ -43,6 +43,8 @@ const Techstack = () => {
         <SiSolidity />
       </Col>
       {/* <Col xs={4} md={2} className="tech-icons">
+{/*       <Col xs={4} md={2} className="tech-icons">
+
         <SiMaterialui />
       </Col> */}
       <Col xs={4} md={2} className="tech-icons">
