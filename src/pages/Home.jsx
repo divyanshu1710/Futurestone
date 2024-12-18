@@ -80,7 +80,6 @@ const Home = () => {
       <div className="video-section" style={{ width: "100%", height: "100vh", overflow: "hidden" }}>
         <video
           ref={videoRef}
-          autoplay
           loop
           playsInline
           style={{
