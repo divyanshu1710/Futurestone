@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import Particle from '../components/Particle';
+import Particle from "../components/Particle";
+import "./../../src/style.css"
 
-// Gallery Component
+
 const Gallery = () => {
   const [modalData, setModalData] = useState(null);
-  const [zoomedProduct, setZoomedProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -17,9 +17,11 @@ const Gallery = () => {
       colors: ["red", "blue", "green"],
       areas: ["US", "EU", "Asia"],
       variations: [
-        { color: "red", img: "./images/product1-red.jpg" },
-        { color: "blue", img: "./images/product1-blue.jpg" },
-        { color: "green", img: "./images/product1-green.jpg" },
+        { color: "red", img: "./assets/download (3).jpg", region: "EU" },
+        { color: "red", img: "./assets/download (4).jpg", region: "US" },
+        { color: "red", img: "./images/product1-red-3.jpg", region: "US" },
+        { color: "blue", img: "./images/product1-blue.jpg", region: "Asia" },
+        { color: "green", img: "./images/product1-green.jpg", region: "US" },
       ],
     },
     {
@@ -28,8 +30,8 @@ const Gallery = () => {
       colors: ["yellow", "purple"],
       areas: ["EU", "Asia"],
       variations: [
-        { color: "yellow", img: "./images/product2-yellow.jpg" },
-        { color: "purple", img: "./images/product2-purple.jpg" },
+        { color: "yellow", img: "./images/product2-yellow.jpg", region: "EU" },
+        { color: "purple", img: "./images/product2-purple.jpg", region: "Asia" },
       ],
     },
   ];
@@ -40,29 +42,34 @@ const Gallery = () => {
     "./assets/download (5).jpg",
   ];
 
-  const handleNext = () => {
+  const handleNextMain = () => {
     setCarouselIndex((prevIndex) => (prevIndex + 1) % keyProducts.length);
   };
 
-  const handlePrev = () => {
+  const handlePrevMain = () => {
     setCarouselIndex(
       (prevIndex) => (prevIndex - 1 + keyProducts.length) % keyProducts.length
     );
   };
 
-  const handleZoom = (product) => {
-    setZoomedProduct(product);
-    setTimeout(() => setZoomedProduct(null), 500);
-  };
-
   const handleFilter = (product) => {
+    console.log("Applying Filter with:", { selectedColor, selectedArea });
+
     const filteredImages = product.variations.filter(
       (variation) =>
         (!selectedColor || variation.color === selectedColor) &&
-        (!selectedArea || product.areas.includes(selectedArea))
+        (!selectedArea || variation.region === selectedArea)
     );
 
-    setModalData({ ...product, filteredImages });
+    console.log("Filtered Images Result:", filteredImages);
+
+    if (filteredImages.length === 0) {
+      alert("No images match the selected filters.");
+      return;
+    }
+
+    setModalData({ product, filteredImages });
+    setCarouselIndex(0); // Reset carousel to the first image
   };
 
   const closeModal = () => {
@@ -71,11 +78,27 @@ const Gallery = () => {
     setSelectedArea("");
   };
 
+  
+
+  const handleNext = () => {
+    if (!modalData) return;
+    setCarouselIndex((prevIndex) => (prevIndex + 1) % modalData.filteredImages.length);
+  };
+
+  const handlePrev = () => {
+    if (!modalData) return;
+    setCarouselIndex(
+      (prevIndex) => (prevIndex - 1 + modalData.filteredImages.length) % modalData.filteredImages.length
+    );
+  };
+
   return (
+
     <div>
-      {/* Carousel Section */}
+
+            {/* Carousel Section */}
       <div className="carousel-container">
-        <button className="carousel-btn prev" onClick={handlePrev}>
+        <button className="carousel-btn prev" onClick={handlePrevMain}>
           &lt;
         </button>
         <img
@@ -83,11 +106,10 @@ const Gallery = () => {
           alt={`Key Product ${carouselIndex + 1}`}
           className="carousel-image"
         />
-        <button className="carousel-btn next" onClick={handleNext}>
+        <button className="carousel-btn next" onClick={handleNextMain}>
           &gt;
         </button>
-      </div>
-
+</div>
       {/* Gallery Section */}
       <div className="gallery">
         {products.map((product) => (
@@ -95,17 +117,17 @@ const Gallery = () => {
             <img
               src={product.img}
               alt={`Product ${product.id}`}
-              className={`gallery-item ${
-                zoomedProduct?.id === product.id ? "zoom" : ""
-              }`}
-              onClick={() => handleZoom(product)}
+              className="gallery-item"
             />
 
             {/* Dropdown Filters */}
             <div className="filters">
               <select
                 value={selectedColor}
-                onChange={(e) => setSelectedColor(e.target.value)}
+                onChange={(e) => {
+                  setSelectedColor(e.target.value);
+                  console.log("Selected Color:", e.target.value);
+                }}
               >
                 <option value="">Select Color</option>
                 {product.colors.map((color, index) => (
@@ -117,7 +139,10 @@ const Gallery = () => {
 
               <select
                 value={selectedArea}
-                onChange={(e) => setSelectedArea(e.target.value)}
+                onChange={(e) => {
+                  setSelectedArea(e.target.value);
+                  console.log("Selected Area:", e.target.value);
+                }}
               >
                 <option value="">Select Area</option>
                 {product.areas.map((area, index) => (
@@ -133,24 +158,27 @@ const Gallery = () => {
         ))}
       </div>
 
-      {/* Modal Section */}
+      {/* Dialog Box for Carousel */}
       {modalData && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="dialog-box">
+          <div className="dialog-box-content">
             <h2>Filtered Images</h2>
-            {modalData.filteredImages.length > 0 ? (
-              modalData.filteredImages.map((imgData, index) => (
-                <img
-                  key={index}
-                  src={imgData.img}
-                  alt={`Filtered Product - ${imgData.color}`}
-                  className="modal-image"
-                />
-              ))
-            ) : (
-              <p>No images match the selected filters.</p>
-            )}
-            <button onClick={closeModal}>Close</button>
+            <div className="carousel">
+              <button className="carousel-btn prev" onClick={handlePrev}>
+                &lt;
+              </button>
+              <img
+                src={modalData.filteredImages[carouselIndex].img}
+                alt={`Filtered Product - ${modalData.filteredImages[carouselIndex].color}`}
+                className="carousel-image"
+              />
+              <button className="carousel-btn next" onClick={handleNext}>
+                &gt;
+              </button>
+            </div>
+            <button className="close-btn" onClick={closeModal}>
+              Close
+            </button>
           </div>
         </div>
       )}
@@ -163,7 +191,6 @@ const Skillset = () => {
     <Container fluid className="about-section">
       <Particle />
       <Container>
-        {/* Gallery Section */}
         <h1 className="project-heading">
           My <strong className="yellow">Gallery</strong>
         </h1>
