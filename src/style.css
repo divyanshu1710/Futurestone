@@ -461,8 +461,8 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
+  /* padding-top: 150px !important;
+  padding-bottom: 30px !important; */
   background-image: var(--section-background-color) !important;
   color: rgb(98 62 42) !important;
 }
@@ -894,8 +894,8 @@ color: green;
 
 .carousel-image {
   width: 100%;
-  height: auto;
-  max-width: 800px;
+  height: 700px;
+  /* max-width: 800px; */
 }
 
 .carousel-btn {
@@ -922,6 +922,7 @@ color: green;
 /* Gallery Section */
 .gallery {
   display: grid;
+  margin-left: 10px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
@@ -1030,4 +1031,25 @@ button:hover {
 
 .filters button:hover {
   background: #0056b3;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.carousel-image-container:hover .carousel-overlay {
+  opacity: 1;
 }

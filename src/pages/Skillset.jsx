@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Particle from "../components/Particle";
 import "./../../src/style.css"
@@ -9,6 +9,7 @@ const Gallery = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const [carouseModallIndex, setCarouseModallIndex] = useState(0);
 
   const products = [
     {
@@ -37,10 +38,20 @@ const Gallery = () => {
   ];
 
   const keyProducts = [
-    "./assets/download (3).jpg",
-    "./assets/download (4).jpg",
-    "./assets/download (5).jpg",
+    {
+      img: "./assets/download (3).jpg",
+      description: "This is the first image description.",
+    },
+    {
+      img: "./assets/download (4).jpg",
+      description: "This is the second image description.",
+    },
+    {
+      img: "./assets/download (5).jpg",
+      description: "This is the third image description.",
+    },
   ];
+
 
   const handleNextMain = () => {
     setCarouselIndex((prevIndex) => (prevIndex + 1) % keyProducts.length);
@@ -82,16 +93,24 @@ const Gallery = () => {
 
   const handleNext = () => {
     if (!modalData) return;
-    setCarouselIndex((prevIndex) => (prevIndex + 1) % modalData.filteredImages.length);
+    setCarouseModallIndex((prevIndex) => (prevIndex + 1) % modalData.filteredImages.length);
   };
 
   const handlePrev = () => {
     if (!modalData) return;
-    setCarouselIndex(
+    setCarouseModallIndex(
       (prevIndex) => (prevIndex - 1 + modalData.filteredImages.length) % modalData.filteredImages.length
     );
   };
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((prevIndex) => (prevIndex + 1) % keyProducts.length);
+    }, 5000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [keyProducts.length])
   return (
 
     <div>
@@ -101,11 +120,17 @@ const Gallery = () => {
         <button className="carousel-btn prev" onClick={handlePrevMain}>
           &lt;
         </button>
-        <img
-          src={keyProducts[carouselIndex]}
-          alt={`Key Product ${carouselIndex + 1}`}
-          className="carousel-image"
-        />
+        <div className="carousel-image-container">
+          <img
+            src={keyProducts[carouselIndex].img}
+            alt={`Key Product ${carouselIndex + 1}`}
+            className="carousel-image"
+          />
+          <div className="carousel-overlay">
+            <h2>Image {carouselIndex + 1}</h2>
+            <p>{keyProducts[carouselIndex].description}</p>
+          </div>
+        </div>
         <button className="carousel-btn next" onClick={handleNextMain}>
           &gt;
         </button>
@@ -168,8 +193,8 @@ const Gallery = () => {
                 &lt;
               </button>
               <img
-                src={modalData.filteredImages[carouselIndex].img}
-                alt={`Filtered Product - ${modalData.filteredImages[carouselIndex].color}`}
+                src={modalData.filteredImages[carouseModallIndex].img}
+                alt={`Filtered Product - ${modalData.filteredImages[carouseModallIndex].color}`}
                 className="carousel-image"
               />
               <button className="carousel-btn next" onClick={handleNext}>
@@ -188,15 +213,15 @@ const Gallery = () => {
 
 const Skillset = () => {
   return (
-    <Container fluid className="about-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
+    <div  className="about-section">
+      {/* <Particle /> */}
+      <div>
+        {/* <h1 className="project-heading">
           My <strong className="yellow">Gallery</strong>
-        </h1>
+        </h1> */}
         <Gallery />
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 
