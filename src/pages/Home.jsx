@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from '../assets/about.png';
+import homeLogo from '../assets/about1.png';
 import Particle from '../components/Particle';
 import About from '../components/Home/About';
 import Type from '../components/Home/Type';
@@ -68,7 +68,10 @@ const Home = () => {
                   src={homeLogo}
                   alt="home pic"
                   className="img-fluid"
-                  style={{ maxHeight: "450px" }}
+                  style={{
+                    maxHeight: "450px",
+                    filter: "drop-shadow(8px 8px 20px rgba(0, 0, 0, 0.5))", // Adds shadow around the image shape
+                  }}
                 />
               </Col>
             </Row>
