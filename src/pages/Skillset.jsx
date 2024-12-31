@@ -136,9 +136,9 @@ const Gallery = () => {
         </button>
 </div>
       {/* Gallery Section */}
-      <div className="gallery">
+      <div className="gallery-item-container">
         {products.map((product) => (
-          <div key={product.id} className="gallery-item-container">
+          <div key={product.id}>
             <img
               src={product.img}
               alt={`Product ${product.id}`}

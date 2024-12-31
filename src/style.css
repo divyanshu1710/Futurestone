@@ -929,11 +929,13 @@ color: green;
 }
 
 .gallery-item-container {
-  position: relative;
+  /* position: relative; */
+  display:flex ;
+  gap: 10px
 }
 
 .gallery-item {
-  width: 100%;
+  width: 320px;
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
