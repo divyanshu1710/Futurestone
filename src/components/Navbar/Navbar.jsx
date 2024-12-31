@@ -62,10 +62,10 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/skillset"
+                to="/gallery"
                 onClick={() => updateExpanded(false)}
               >
-                <GiSkills style={{ marginBottom: "2px" }} /> Skillset
+                <GiSkills style={{ marginBottom: "2px" }} /> Gallery
               </Nav.Link>
             </Nav.Item>
 

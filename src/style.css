@@ -278,6 +278,11 @@ button:focus {
   font-size: 2.4em !important;
   padding-left: 50px !important;
 }
+.headingSkill{
+  background-color: rgb(233 222 212) !important;
+  margin: 50px;
+  padding: 10px;
+}
 
 .heading-name {
   font-size: 2.5em !important;
@@ -929,28 +934,51 @@ color: green;
 }
 
 .gallery-item-container {
-  /* position: relative; */
-  display:flex ;
-  gap: 10px
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
+.gallery-item-container > * {
+    flex: 1 1 calc(33.33% - 10px); /* Adjust width for 3 items per row */
+    box-sizing: border-box; /* Ensure padding/border don't affect width */
+}
+
+
+/* .gallery-item {
+  width: 320px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+} */
 .gallery-item {
   width: 320px;
   height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: transform 0.3s ease-in-out;
+
+  /* Add border on the right and bottom */
+  border-right: 4px solid #000; /* Right border */
+  border-bottom: 4px solid #000; /* Bottom border */
+
+  /* Add slanted shadow */
+  box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.3); /* Diagonal shadow */
 }
+
+
 
 .gallery-item.zoom {
   transform: scale(1.1);
 }
 
 .filters {
-  margin-top: 10px;
-  display: flex;
+  margin: 20px;
+  /* display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 10px; */
+  gap: 5px;
 }
 
 .filters select {
