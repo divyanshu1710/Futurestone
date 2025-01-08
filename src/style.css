@@ -278,6 +278,11 @@ button:focus {
   font-size: 2.4em !important;
   padding-left: 50px !important;
 }
+.headingSkill{
+  background-color: rgb(233 222 212) !important;
+  margin-bottom: 30px;
+  padding: 10px;
+}
 
 .heading-name {
   font-size: 2.5em !important;
@@ -461,8 +466,8 @@ button:focus {
 
 .about-section {
   position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
+  /* padding-top: 150px !important;
+  padding-bottom: 30px !important; */
   background-image: var(--section-background-color) !important;
   color: rgb(98 62 42) !important;
 }
@@ -894,8 +899,8 @@ color: green;
 
 .carousel-image {
   width: 100%;
-  height: auto;
-  max-width: 800px;
+  height: 700px;
+  /* max-width: 800px; */
 }
 
 .carousel-btn {
@@ -922,32 +927,58 @@ color: green;
 /* Gallery Section */
 .gallery {
   display: grid;
+  margin-left: 10px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
 
 .gallery-item-container {
-  position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
-.gallery-item {
-  width: 100%;
+.gallery-item-container > * {
+    flex: 1 1 calc(33.33% - 10px); /* Adjust width for 3 items per row */
+    box-sizing: border-box; /* Ensure padding/border don't affect width */
+}
+
+
+/* .gallery-item {
+  width: 320px;
   height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: transform 0.3s ease-in-out;
+} */
+.gallery-item {
+  width: 320px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+
+  /* Add border on the right and bottom */
+  border-right: 4px solid #000; /* Right border */
+  border-bottom: 4px solid #000; /* Bottom border */
+
+  /* Add slanted shadow */
+  box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.3); /* Diagonal shadow */
 }
+
+
 
 .gallery-item.zoom {
   transform: scale(1.1);
 }
 
 .filters {
-  margin-top: 10px;
-  display: flex;
+  margin: 20px;
+  /* display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 10px; */
+  gap: 5px;
 }
 
 .filters select {
@@ -1030,4 +1061,25 @@ button:hover {
 
 .filters button:hover {
   background: #0056b3;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.carousel-image-container:hover .carousel-overlay {
+  opacity: 1;
 }

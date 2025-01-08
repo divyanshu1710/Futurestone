@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import LaptopImg from "../../assets/home-main.svg";
 import Tilt from "react-parallax-tilt";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai"; // Instagram Icon
 import { BsWhatsapp } from "react-icons/bs"; // WhatsApp Icon
+
 
 const About = () => {
     return (
@@ -28,7 +28,7 @@ const About = () => {
               </Col>
               <Col md={4} className="myAvtar">
                 <Tilt>
-                  <img src={LaptopImg} className="img-fluid" alt="avatar" />
+                  <img src= "../assets/dalle.png" className="img-fluid" alt="avatar" />
                 </Tilt>
               </Col>
             </Row>
