@@ -78,8 +78,14 @@ button:focus {
 /* --------- */
 /* Navbar Section  */
 /* --------- */
+/* --------- */
+/* Navbar Section  */
+/* --------- */
 .sticky {
-  background-color: rgb(233 222 212)!important;
+  background-image: url('./assets/1.jpeg') !important; /* Replace 'your-image-name.jpg' with the actual image file name */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
@@ -87,11 +93,15 @@ button:focus {
 
 .navbar {
   position: fixed !important;
-  background-color: rgb(233 222 212) !important;
+  background-image: url('./assets/1.jpeg') !important; /* Replace 'your-image-name.jpg' with the actual image file name */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   transition: all 0.3s ease-out 0s !important;
   padding: 0.3rem 2rem !important;
   font-size: 1.2rem !important;
 }
+
 
 .navbar-toggler {
   position: relative !important;
@@ -261,9 +271,10 @@ button:focus {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./assets/home-bg.jpg);
+  background-image: url(./assets/4.jpeg) !important;
   background-position: top center;
   background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
@@ -331,7 +342,11 @@ button:focus {
   position: relative;
   padding-bottom: 70px !important;
   padding-top: 70px !important;
-   background-image: var(--image-gradient), url('./assets/home-bg.jpg'); 
+  background-image: url('./assets/1.jpeg') !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent !important;
 }
 
 .home-about-description {
@@ -1082,4 +1097,12 @@ button:hover {
 
 .carousel-image-container:hover .carousel-overlay {
   opacity: 1;
+}
+
+.contact-container {
+  padding: 60px;
+  background-image: url('./assets/3.jpeg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
