@@ -1249,5 +1249,19 @@ color: green;
   background-repeat: no-repeat;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+.file-size-info {
+  color: white;
+}
+
+.file-name {
+  color: white;
+  font-size: 14px;
+  margin-top: 5px;  /* Adjust the margin as needed */
+}
+
 
 
