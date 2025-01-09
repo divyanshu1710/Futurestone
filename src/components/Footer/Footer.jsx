@@ -5,7 +5,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
-import logo from "../../assets/about1.png";
+import logo from "../../assets/about1.png"
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
