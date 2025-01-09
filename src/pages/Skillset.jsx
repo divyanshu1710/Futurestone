@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../style.css';
 
 const Gallery = () => {
-  const [modalData, setModalData] = useState(null);
-  const [selectedColor, setSelectedColor] = useState("");
-  const [selectedArea, setSelectedArea] = useState("");
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [carouselModalIndex, setCarouselModalIndex] = useState(0);
   const [expandedGroups, setExpandedGroups] = useState([]); // Tracks expanded groups
   const groupHeaders = ["Monuments", "HeadStone", "Weasis"];
 

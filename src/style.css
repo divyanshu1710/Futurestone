@@ -428,11 +428,17 @@ button:focus {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(1, 6, 36);
+  background-color: rgb(1, 6, 36); /* Fallback color in case the image doesn't load */
+  background-image: url('./assets/3.jpeg'); /* Replace with the correct path to your image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
   bottom: 0 !important;
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
+  padding-bottom: 8px !important;
+  color: white; /* Ensures text is readable over the background */
 }
+
 .footer-copywright {
   display: flex;
   text-align: center !important;
@@ -541,11 +547,16 @@ button:focus {
 /* Projects */
 /* --------- */
 .project-section {
-position: relative !important;
-padding-top: 150px !important;
-padding-bottom: 30px !important;
-background-image: var(--section-background-color) !important;
+  background-color: rgb(1, 6, 36); /* Fallback color */
+  background-image: url('./assets/4.jpeg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  padding-top: 50px; /* Adjust padding as needed */
+  padding-bottom: 50px; /* Adjust padding as needed */
+  color: black; /* Ensures text is readable */
 }
+
 
 .project-card {
 padding-top: 50px !important;
@@ -635,10 +646,10 @@ outline: none !important;
 box-shadow: none !important;
 }
 .project-heading {
-color: white !important;
+color: black !important;
 font-size: 2.3em !important;
 font-weight: 500 !important;
-padding-top: 10px !important;
+padding-top: 50px !important;
 }
 
 
@@ -650,7 +661,7 @@ padding-top: 10px !important;
   position: relative !important;
   padding-top: 110px !important;
   padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
+  background-image: url(./assets/4.jpeg) !important;
   color: white !important;
 }
 
@@ -1232,10 +1243,11 @@ color: green;
 
 .contact-container {
   padding: 60px;
-  background-image: url('./assets/3.jpeg'); /* Path to your image */
+  background-image: url('./assets/11.jpg'); /* Path to your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 

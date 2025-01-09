@@ -34,22 +34,22 @@
     height: 3rem;
     padding: 0.3em;
     outline: none;
-    border: 2px solid #40008a;
+    border: 2px solidwhite;
     border-radius: 8px;
     font-size: 19px;
     color: white   
 }
 
 .c-right .user:hover{
-    box-shadow: 0 0 9px #7500fa;
+    box-shadow: 0 0 9px white;
 }
 
 input{
-    background-color: var(--purple)
+    background-color: var(--white)
 }
 textarea{
     height: 5rem!important;
-    background-color: var(--purple)
+    background-color: var(--white)
 }
 
 .done{
