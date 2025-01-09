@@ -25,8 +25,8 @@ const Gallery = () => {
     { id: 1, img: "./assets/download (1).jpg", colors: ["red", "blue", "green"], areas: ["US", "EU", "Asia"], group: 1 },
     { id: 2, img: "./assets/download (2).jpg", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 1 },
     { id: 3, img: "./assets/download (3).jpg", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 1 },
-    { id: 4, img: "./assets/DSC01192.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 2 },
-    { id: 5, img: "./assets/DSC01221.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 2 },
+    { id: 4, img: "./assets/DSC01192.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 1 },
+    { id: 5, img: "./assets/DSC01221.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 1 },
     { id: 6, img: "./assets/DSC01323.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 2 },
     { id: 7, img: "./assets/DSC01554.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 3 },
     { id: 8, img: "./assets/DSC01618.JPG", colors: ["yellow", "purple"], areas: ["EU", "Asia"], group: 3 },
@@ -116,6 +116,7 @@ const Gallery = () => {
                 className="see-more-btn"
                 onClick={() => toggleExpandGroup(groupIndex)}
               >
+                <span className="arrow">››</span>
                 {isExpanded ? "See Less" : "See More"}
               </button>
             </div>

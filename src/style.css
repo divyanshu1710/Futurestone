@@ -1262,6 +1262,42 @@ textarea::placeholder {
   font-size: 14px;
   margin-top: 5px;  /* Adjust the margin as needed */
 }
+/* Style for the "See More" button with arrows */
+/* Style for the "See More" button with arrows */
+.see-more-btn {
+  background-color: transparent; /* Transparent background */
+  color: #000000; /* Green color */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto; /* Push the button to the right */
+  margin-right: 0;
+  text-align: center; /* Center text inside the button */
+  border: none; /* Removed border */
+}
 
+.see-more-btn:hover {
+  color: white;
+  background-color: #020202; /* Green background on hover */
+  transform: translateY(-3px); /* Slight hover effect */
+}
 
+.see-more-btn:focus {
+  outline: none;
+}
 
+.see-more-btn .arrow {
+  margin-right: 5px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.see-more-btn:hover .arrow {
+  transform: translateX(5px); /* Arrow moves slightly on hover */
+}
