@@ -36,7 +36,7 @@ const Projects = () => {
             <Col key={project.id} md={4} className="project-card">
               <ProjectCard
                 imgPath={`data:${project.imageType};base64,${project.image}`}
-                title={project.title}
+                title=<b>{project.title}</b>
                 description={project.description}
                 blogData={project} // Pass the entire project data
               />
