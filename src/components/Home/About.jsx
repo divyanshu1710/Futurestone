@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaVk } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai"; // Instagram Icon
 import { BsWhatsapp } from "react-icons/bs"; // WhatsApp Icon
 
@@ -41,16 +40,16 @@ const About = () => {
                 <ul className="home-about-social-links">
                   <li className="social-icons">
                     <a
-                      href="https://twitter.com/19sajib"
+                      href="https://vk.com/fortunemonuments"
                       target="_blank"
                       rel="noreferrer"
                       className="icon-colour home-social-icons"
-                      aria-label="twitter"
+                      aria-label="vk"
                     >
-                      <AiOutlineTwitter />
+                      <FaVk />
                     </a>
                   </li>
-                  <li className="social-icons">
+                  {/* <li className="social-icons">
                     <a
                       href="https://www.linkedin.com/in/19sajib/"
                       target="_blank"
@@ -60,10 +59,10 @@ const About = () => {
                     >
                       <FaLinkedinIn />
                     </a>
-                  </li>
+                  </li> */}
                   <li className="social-icons">
                     <a
-                      href="https://www.instagram.com/yourusername/"
+                      href="https://www.instagram.com/fortune_stonex?igsh=MTd6MmNmbGlsZTg2eg=="
                       target="_blank"
                       rel="noreferrer"
                       className="icon-colour home-social-icons"
@@ -74,7 +73,7 @@ const About = () => {
                   </li>
                   <li className="social-icons">
                     <a
-                      href="https://wa.me/yourwhatsappnumber"
+                      href="https://wa.me/7300059986"
                       target="_blank"
                       rel="noreferrer"
                       className="icon-colour home-social-icons"

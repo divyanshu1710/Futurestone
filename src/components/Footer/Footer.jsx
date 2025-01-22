@@ -1,9 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiOutlineTwitter
-} from "react-icons/ai";
-import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaVk, FaInstagram } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import logo from "../../assets/about11.png"
 import { useNavigate } from "react-router-dom";
@@ -33,16 +30,16 @@ const Footer = () => {
           <ul className="footer-icons">
             <li className="social-icons">
               <a
-                href="https://twitter.com/19sajib"
+                href="https://vk.com/fortunemonuments"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="twitter"
+                aria-label="VK"
               >
-                <AiOutlineTwitter />
+                <FaVk />
               </a>
             </li>
-            <li className="social-icons">
+            {/* <li className="social-icons">
               <a
                 href="https://www.linkedin.com/in/19sajib/"
                 style={{ color: "white" }}
@@ -52,10 +49,10 @@ const Footer = () => {
               >
                 <FaLinkedinIn />
               </a>
-            </li>
+            </li> */}
             <li className="social-icons">
               <a
-                href="https://wa.me/yourwhatsappnumber" // Replace with your WhatsApp link
+                href="https://wa.me/7300059986" // Replace with your WhatsApp link
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -66,7 +63,7 @@ const Footer = () => {
             </li>
             <li className="social-icons">
               <a
-                href="https://www.instagram.com/yourusername/" // Replace with your Instagram link
+                href="https://www.instagram.com/fortune_stonex?igsh=MTd6MmNmbGlsZTg2eg==" // Replace with your Instagram link
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
