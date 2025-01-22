@@ -64,7 +64,6 @@ const Contact = () => {
             </Row>
         </Container>
     )
-}
 };
 
 export default Contact
