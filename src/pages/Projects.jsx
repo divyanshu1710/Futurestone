@@ -30,13 +30,13 @@ const Projects = () => {
         <h1 className="project-heading">
           Recent Top <strong className="yellow">Works</strong>
         </h1>
-        <p style={{ color: "white" }}>Here are some of our Achievements.</p>
+        <p style={{ color: "black" }}>Here are some of our Achievements.</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {projects.map((project) => (
             <Col key={project.id} md={4} className="project-card">
               <ProjectCard
                 imgPath={`data:${project.imageType};base64,${project.image}`}
-                title={project.title}
+                title=<b>{project.title}</b>
                 description={project.description}
                 blogData={project} // Pass the entire project data
               />

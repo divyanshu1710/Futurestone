@@ -109,13 +109,23 @@ const Contact = () => {
             <div className="file-upload">
               <input
                 type="file"
+                id="file-input"
                 name="attachment"
                 accept=".jpg,.jpeg,.png,.pdf"
                 onChange={handleFileChange}
+                style={{ display: 'none' }}  // Hide the default file input
               />
-              {/* Display file size limit information */}
+              <button
+                type="button"
+                className="file-select-button"
+                onClick={() => document.getElementById('file-input').click()}  // Trigger file input when button is clicked
+              >
+                Choose a file
+              </button>
+              <p className="file-name">
+                {attachment ? attachment.name : "No file chosen"}
+              </p>
               <p className="file-size-info">Maximum file size: 50MB</p>
-              {attachment && <p className="file-size">{fileSize}</p>}
             </div>
             <span className="not-done">
               {notDone && "Please fill all required fields."}
