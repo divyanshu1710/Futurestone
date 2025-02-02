@@ -6,17 +6,13 @@ const Gallery = () => {
   const [expandedGroups, setExpandedGroups] = useState([]); // Tracks expanded groups
   const groupHeaders = ["Headstone", "Coverstone", "Vases"];
 
-  const keyProducts = [
-    {
-      video: "./assets/coverstone.mp4"
-    },
-    {
-      video: "./assets/headstone.mp4"
-    },
-    {
-      video: "./assets/vases.mp4"
-    },
-  ];
+    // Update key products with images instead of videos
+    const keyProducts = [
+      { image: "./assets/coverstone.png" },
+      { image: "./assets/headstone.png" },
+      { image: "./assets/vases.png" },
+    ];
+  
 
   const products = [
     { id: 1, img: "./assets/32.png", colors: ["red", "blue", "green"], areas: ["US", "EU", "Asia"], group: 3 },
@@ -90,22 +86,17 @@ const Gallery = () => {
 
   return (
     <div className="gallery-container">
-      {/* Main Carousel */}
+      {/* Main Image Carousel */}
       <div className="carousel-container">
         <button className="carousel-btn prev" onClick={handlePrevMain}>
           &lt;
         </button>
-        <div className="carousel-video-container">
-          <video
-            src={keyProducts[carouselIndex].video}
-            controls
-            autoPlay
-            loop
-            className="carousel-video"
-          ></video>
-          <p className="carousel-description">
-            {keyProducts[carouselIndex].description}
-          </p>
+        <div className="carousel-image-container">
+          <img
+            src={keyProducts[carouselIndex].image}
+            alt="Carousel Image"
+            className="carousel-image"
+          />
         </div>
         <button className="carousel-btn next" onClick={handleNextMain}>
           &gt;

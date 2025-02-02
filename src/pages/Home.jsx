@@ -69,7 +69,7 @@ const Home = () => {
                   alt="home pic"
                   className="img-fluid"
                   style={{
-                    maxHeight: "450px",
+                    maxHeight: "750px",
                     filter: "drop-shadow(8px 8px 20px rgba(0, 0, 0, 0.5))", // Adds shadow around the image shape
                   }}
                 />

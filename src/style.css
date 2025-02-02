@@ -281,7 +281,7 @@ button:focus {
 
 .home-content {
   padding: 9rem 0 2rem !important;
-  color: rgb(98 62 42);
+  color: #623e2a;
   text-align: left;
 }
 
@@ -957,7 +957,7 @@ color: green;
   width: 100%;
   min-height: 100vh;
   padding: 1rem;
-  background-image: url('./assets/2.jpeg');
+  background-image: url('./assets/4.jpeg');
 }
 
 /* Main Carousel */
@@ -970,17 +970,19 @@ color: green;
 
 .carousel-image-container {
   width: 100%;
-  height: 100vh;
-  position: relative;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures the image covers the entire area */
+  border-radius: 0;
+  box-shadow: none;
 }
-
-
 
 .carousel-btn {
   position: absolute;
@@ -1207,6 +1209,10 @@ color: green;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  margin: 0; /* Remove default margin */
+  width: 100%; /* Ensure the container takes the full width */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 input::placeholder,
