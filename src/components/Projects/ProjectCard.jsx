@@ -7,7 +7,7 @@ const ProjectCard = ({ imgPath, title, description, blogData }) => {
 
   // Truncate the description to a fixed number of characters
   const truncatedDescription = description.length > 300 
-    ? description.substring(0, 300) + "..."
+    ? description.substring(0, 300) + "..." 
     : description;
 
   return (
@@ -18,7 +18,7 @@ const ProjectCard = ({ imgPath, title, description, blogData }) => {
         <Card.Text>{truncatedDescription}</Card.Text>
         <Button
           variant="primary"
-          onClick={() => navigate("/blog-details", { state: { blog: blogData } })}
+          onClick={() => navigate("/blog-details", { state: { blog: blogData } })} // Pass the blog data
         >
           See More
         </Button>
@@ -28,3 +28,4 @@ const ProjectCard = ({ imgPath, title, description, blogData }) => {
 };
 
 export default ProjectCard;
+
