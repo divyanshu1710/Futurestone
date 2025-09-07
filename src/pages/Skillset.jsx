@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import '../style.css';
 
 const Gallery = () => {
@@ -87,21 +88,27 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
       {/* Main Image Carousel */}
-      <div className="carousel-container">
-        <button className="carousel-btn prev" onClick={handlePrevMain}>
-          &lt;
-        </button>
-        <div className="carousel-image-container">
-          <img
-            src={keyProducts[carouselIndex].image}
-            alt="Carousel Image"
-            className="carousel-image"
-          />
-        </div>
-        <button className="carousel-btn next" onClick={handleNextMain}>
-          &gt;
-        </button>
-      </div>
+      <Container fluid>
+        <Row>
+          <Col xs={12} className="px-0">
+            <div className="carousel-container">
+              <button className="carousel-btn prev" onClick={handlePrevMain}>
+                &lt;
+              </button>
+              <div className="carousel-image-container">
+                <img
+                  src={keyProducts[carouselIndex].image}
+                  alt="Carousel Image"
+                  className="carousel-image"
+                />
+              </div>
+              <button className="carousel-btn next" onClick={handleNextMain}>
+                &gt;
+              </button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       {/* Gallery Groups */}
       <h1 className="gallery-title">Products Galleria</h1>

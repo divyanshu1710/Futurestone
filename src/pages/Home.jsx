@@ -55,7 +55,7 @@ const Home = () => {
 
                 <h1 className="heading-name">
                   Welcome
-                  <strong className="main-name"> to World of Futurestone</strong>
+                  <strong className="main-name"> to World of Fortune StoneX</strong>
                 </h1>
 
                 <div style={{ padding: 50, textAlign: "left" }}>
