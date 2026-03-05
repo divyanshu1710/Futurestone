@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from '../assets/about11.png';
 import Particle from '../components/Particle';
@@ -7,6 +8,7 @@ import Type from '../components/Home/Type';
 
 const Home = () => {
   const videoRef = useRef(null); // Reference to the video element
+  const { t } = useTranslation();
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -47,19 +49,18 @@ const Home = () => {
             <Row>
               <Col md={7} className="home-header">
                 <h1 style={{ paddingBottom: 15 }} className="heading">
-                  Hi There!{" "}
+                  {t('home.greeting')}{" "}
                   <span className="wave" role="img" aria-labelledby="wave">
                     👋🏻
                   </span>
                 </h1>
 
                 <h1 className="heading-name">
-                  Welcome
-                  <strong className="main-name"> to World of Fortune StoneX</strong>
+                  {t('home.welcome')}
                 </h1>
 
                 <div style={{ padding: 50, textAlign: "left" }}>
-                  <Type />
+                  <Type text={t('home.typeIntro')} />
                 </div>
               </Col>
 

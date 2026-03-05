@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "blogs": "Blogs",
+    "brochure": "Brochure",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hi There!",
+    "welcome": "Welcome to World of Fortune StoneX",
+    "typeIntro": "Your gateway to exquisite stone creations"
+    ,"typeStrings": [
+      "Headstones: Timeless tributes crafted with care.",
+      "Monuments: Grand designs that honor legacies.",
+      "Accessories: Vases, plaques, and more to complete the look."
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "body": "Two decades ago, Fortune StoneX Monuments began its journey with a bold vision: to seamlessly blend the timelessness of tradition with the possibilities of innovation. Our unwavering commitment to quality and craftsmanship has made us pioneers in the industry, delivering authentic and exquisite stone monuments to clients in over 10 countries worldwide."
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get In Touch",
+    "home": "Home",
+    "gallery": "Gallery",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "copyright": "© {{year}} Fortune Stonex. All Rights Reserved."
+  }
+  ,"contact": {
+    "heroTitle": "Get in Touch",
+    "heroSubtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "formTitle": "Send us a Message",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "visitUs": "Visit Us",
+    "businessHours": "Business Hours",
+    "phone": "+91 9251226251",
+    "email": "support@futurestone.com",
+    "address": "123 Business Street, City, State 12345",
+    "hours": "Mon - Fri: 9:00 AM - 6:00 PM\nSat: 10:00 AM - 4:00 PM\nSun: Closed"
+  }
+  ,
+  "monuments_description": "From majestic landmarks that define landscapes to personalized headstones that honor cherished memories, every piece we create is a testament to artistry and precision. We understand that each monument tells a unique story – your story – and we ensure it stands the test of time. Our range includes timeless headstones, intricate monuments, and thoughtfully designed accessories like vases and plaques, each crafted to enhance and personalize the experience. With a futuristic approach and an authentic touch, we are redefining what it means to leave a lasting legacy. At Fortune StoneX Monuments, we don't just create monuments; we build connections to the past, present, and future. Authentic. Innovative. Unmatched."
+  ,
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Explore our exquisite collection of premium stone products",
+    "groups": [
+      { "header": "Headstone", "subtitle": "Premium headstone collection" },
+      { "header": "Coverstone", "subtitle": "Premium coverstone collection" },
+      { "header": "Vases", "subtitle": "Premium vases collection" }
+    ],
+    "buttonViewDetails": "View Details"
+  },
+  "blog": {
+    "heading": "Recent Top Works",
+    "subtitle": "Here are some of our Achievements."
+  },
+  "seeMore": "See More",
+  "seeLess": "See Less"
+}

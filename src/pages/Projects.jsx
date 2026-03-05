@@ -149,50 +149,61 @@
 
 
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
+import { Container, Row, Col } from "react-bootstrap"; // removed unused Button, Form
 import ProjectCard from "../components/Projects/ProjectCard";
 import Particle from "../components/Particle";
 
-// Example initial projects (with image paths from the public folder)
+// explicitly import blog images so webpack can bundle them correctly
+import blog1 from "../assets/blog1.jpeg";
+import blog2 from "../assets/blog2.jpeg";
+import blog3 from "../assets/blog3.jpeg";
+
+// Example initial projects (used as blog cards here).
+// The images have been updated to point at the blog assets instead of the
+// placeholder project pictures.
 const initialProjects = [
   {
     id: 1,
     title: "Project two",
     description: "Full description for Project One. This will be shown when the user clicks 'See More'.",
-    image: "../assets/1.jpeg", // Image path (local file inside public folder)
+    image: blog1, // imported image module
   },
   {
     id: 2,
     title: "Project Two",
     description: "Full description for Project Two. This will be shown when the user clicks 'See More'.",
-    image: "../assets/2.jpeg", // Image path (local file inside public folder)
+    image: blog2, // imported image module
   },
   {
     id: 3,
     title: "Project Three",
     description: "Full description for Project Three. This will be shown when the user clicks 'See More'.",
-    image: "../assets/3.jpeg", // Image path (local file inside public folder)
+    image: blog3, // imported image module
   },
 ];
 
 const Projects = () => {
-  const [projects, setProjects] = useState(initialProjects);
+  const { t } = useTranslation();
+  const [projects] = useState(initialProjects); // no setter needed since projects are static here
 
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          Recent Top <strong className="yellow">Works</strong>
+          {t('blog.heading')?.split(' ').map((word, idx) => (
+            <React.Fragment key={idx}>{word} </React.Fragment>
+          ))}
         </h1>
-        <p style={{ color: "black" }}>Here are some of our Achievements.</p>
+        <p style={{ color: "black" }}>{t('blog.subtitle')}</p>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {projects.map((project) => (
             <Col key={project.id} md={4} className="project-card">
               <ProjectCard
                 imgPath={project.image || "/images/default-image.png"} // If no image, use the default
-                title={<b>{project.title}</b>}
+                title={project.title} // pass string so alt text is correct
                 description={project.description}
                 blogData={project} // Pass the entire project data to the card
               />

@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "gallery": "Galería",
+    "blogs": "Blogs",
+    "brochure": "Folleto",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "¡Hola!",
+    "welcome": "Bienvenido al Mundo de Fortune StoneX",
+    "typeIntro": "Tu puerta a creaciones de piedra exquisitas"
+    ,"typeStrings": [
+      "Lápidas: Tributos eternos elaborados con cuidado.",
+      "Monumentos: Diseños grandiosos que honran legados.",
+      "Accesorios: Jarrones, placas y más para completar el aspecto."
+    ]
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "body": "Hace dos décadas, Fortune StoneX Monuments comenzó su viaje con una visión audaz: fusionar sin problemas la intemporalidad de la tradición con las posibilidades de la innovación. Nuestro compromiso inquebrantable con la calidad y la artesanía nos ha convertido en pioneros en la industria, brindando monumentos de piedra auténticos y exquisitos a clientes en más de 10 países en todo el mundo."
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "getInTouch": "Ponte en Contacto",
+    "home": "Inicio",
+    "gallery": "Galería",
+    "blogs": "Blogs",
+    "contact": "Contacto",
+    "copyright": "© {{year}} Fortune Stonex. Todos los derechos reservados."
+  }
+  ,"contact": {
+    "heroTitle": "Ponte en Contacto",
+    "heroSubtitle": "Nos encantaría saber de ti. Envíanos un mensaje y responderemos lo antes posible.",
+    "formTitle": "Envíanos un Mensaje",
+    "callUs": "Llámanos",
+    "emailUs": "Envíanos un Correo",
+    "visitUs": "Visítanos",
+    "businessHours": "Horario de Atención",
+    "phone": "+91 9251226251",
+    "email": "support@futurestone.com",
+    "address": "123 Business Street, City, State 12345",
+    "hours": "Lun - Vie: 9:00 AM - 6:00 PM\nSáb: 10:00 AM - 4:00 PM\nDom: Cerrado"
+  }
+  ,
+  "monuments_description": "Desde majestuosos hitos que definen paisajes hasta lápidas personalizadas que honran recuerdos queridos, cada pieza que creamos es un testimonio de arte y precisión. Entendemos que cada monumento cuenta una historia única: tu historia, y nos aseguramos de que resista la prueba del tiempo. Nuestra gama incluye lápidas atemporales, monumentos intrincados y accesorios diseñados con cuidado como jarrones y placas, cada uno elaborado para mejorar y personalizar la experiencia. Con un enfoque futurista y un toque auténtico, estamos redefiniendo lo que significa dejar un legado duradero. En Fortune StoneX Monuments, no solo creamos monumentos; construimos conexiones con el pasado, el presente y el futuro. Auténtico. Innovador. Inigualable."
+  ,
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Explora nuestra exquisita colección de productos de piedra premium",
+    "groups": [
+      { "header": "Lápida", "subtitle": "Colección premium de lápidas" },
+      { "header": "Cubierta", "subtitle": "Colección premium de cubiertas" },
+      { "header": "Jarrones", "subtitle": "Colección premium de jarrones" }
+    ],
+    "buttonViewDetails": "Ver detalles"
+  },
+  "blog": {
+    "heading": "Últimas obras destacadas",
+    "subtitle": "Aquí están algunos de nuestros logros."
+  }
+  ,
+  "seeMore": "Ver más",
+  "seeLess": "Ver menos"
+}

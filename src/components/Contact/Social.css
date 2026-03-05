@@ -1,35 +1,41 @@
 .contact-section {
     position: relative;
-    padding-bottom: 70px !important;
-    padding-top: 70px !important;
-  }
+    padding-bottom: 100px !important;
+    padding-top: 100px !important;
+    background: linear-gradient(to bottom left, #FAFAFA, #E8E8E8);
+}
 
-.contact-text{
-    color: white
+.contact-text {
+    color: #2C2C2C;
+    font-size: 1.2em;
+    line-height: 1.8;
 }
 
 .contact-social-links {
     justify-content: center !important;
-    padding-top: 15px !important;
-    display: inline-block !important;
+    padding-top: 30px !important;
+    display: flex !important;
     position: relative !important;
-    padding-inline-start: 0 !important;
-  }
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
 .contact-social-icons {
     position: relative !important;
-    display: inline-block !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
     width: 70px !important;
     height: 70px !important;
     text-align: center !important;
-    font-size: 2em !important;
-    line-height: 2em !important;
-    background: rgba(110, 110, 110, 0.972) !important;
+    font-size: 1.8em !important;
+    background: #C9A86A !important;
     border-radius: 50% !important;
-    transition: 0.5s !important;
-  }
-  
-  .contact-social-icons::before {
+    transition: all 0.3s ease !important;
+    color: white !important;
+}
+
+.contact-social-icons::before {
     content: "";
     position: absolute;
     top: 0;
@@ -37,28 +43,31 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #e9fa00;
-    transition: 0.5s;
+    background: rgba(201, 168, 106, 0.2);
+    transition: 0.3s ease;
     transform: scale(0.9);
     z-index: -1;
-  }
+}
 
-  .contact-social-icons:hover::before {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #fdf902;
-  }
-  
-  .contact-social-icons:hover {
-    color: #e5ff00;
-    box-shadow: 0 0 7px #fdf901;
-    text-shadow: 0 0 4px #fcf802;
-  }
-  .contact-icons {
+.contact-social-icons:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(201, 168, 106, 0.5);
+}
+
+.contact-social-icons:hover {
+    color: white;
+    box-shadow: 0 0 10px #C9A86A;
+    text-shadow: none;
+    background: #B89A52 !important;
+    transform: translateY(-3px);
+}
+
+.contact-icons {
     display: inline-block !important;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .icon-color {
-    color: #e6ff01 !important;
-  } 
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.icon-color {
+    color: white !important;
+} 

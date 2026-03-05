@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import Home from './pages/Home';
 import Skill from './pages/Skillset';
 import Project from './pages/Projects';
-import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import LoginPage from "./pages/LoginPage";
 import AddImagePage from "./pages/AddImagePage";
@@ -21,12 +20,12 @@ import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, setLoad] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      setLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -42,7 +41,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gallery" element={<Skill />} />
           <Route path="/blogs" element={<Project />} />
-          <Route path="/brochure" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog-details" element={<BlogDetails />} />
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -14,11 +15,13 @@ import {
 } from "react-icons/ai";
 import { GiSkills } from "react-icons/gi"
 import { CgFileDocument } from "react-icons/cg";
+import LanguageSwitcher from '../LanguageSwitcher';
 
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const { t } = useTranslation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -55,7 +58,7 @@ function NavBar() {
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+                <AiOutlineHome style={{ marginBottom: "2px" }} /> {t('nav.home')}
               </Nav.Link>
             </Nav.Item>
 
@@ -65,7 +68,7 @@ function NavBar() {
                 to="/gallery"
                 onClick={() => updateExpanded(false)}
               >
-                <GiSkills style={{ marginBottom: "2px" }} /> Gallery
+                  <GiSkills style={{ marginBottom: "2px" }} /> {t('nav.gallery')}
               </Nav.Link>
             </Nav.Item>
 
@@ -77,30 +80,36 @@ function NavBar() {
               >
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
-                />{" "}
-                Blogs
+                />{" "}{t('nav.blogs')}
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
-                to="/brochure"
+                href={require('../../assets/Fortune Stonex Brochure 2023.pdf')}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Brochure
+                <CgFileDocument style={{ marginBottom: "2px" }} /> {t('nav.brochure')}
               </Nav.Link>
             </Nav.Item>
-
             <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/contact"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineContacts style={{ marginBottom: "2px" }} /> Contact Me
+                <AiOutlineContacts style={{ marginBottom: "2px" }} /> {t('nav.contact')}
               </Nav.Link>
             </Nav.Item>
+
+            {/* language selector dropdown (placed after contact) */}
+            <Nav.Item className="d-flex align-items-center ms-2">
+              <LanguageSwitcher />
+            </Nav.Item>
+
+
 
             {/* <Nav.Item className="fork-btn">
               <Button

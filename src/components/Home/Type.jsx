@@ -1,16 +1,16 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 
+import { useTranslation } from 'react-i18next';
+
 const Type = () => {
+  const { t } = useTranslation();
+  const strings = t('home.typeStrings', { returnObjects: true });
   return (
     <div style={{ textAlign: "left" }}>
       <Typewriter
         options={{
-          strings: [
-            "Headstones: Timeless tributes crafted with care.",
-            "Monuments: Grand designs that honor legacies.",
-            "Accessories: Vases, plaques, and more to complete the look."
-          ],
+          strings,
           autoStart: true,
           loop: true,
           deleteSpeed: 10,

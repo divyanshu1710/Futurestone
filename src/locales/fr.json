@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "blogs": "Blogs",
+    "brochure": "Brochure",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Bonjour!",
+    "welcome": "Bienvenue dans le Monde de Fortune StoneX",
+    "typeIntro": "Votre passerelle vers des créations en pierre exquises"
+    ,"typeStrings": [
+      "Pierres tombales&nbsp;: hommages intemporels façonnés avec soin.",
+      "Monuments&nbsp;: conceptions grandioses qui honorent les héritages.",
+      "Accessoires&nbsp;: vases, plaques et plus encore pour parfaire le look."
+    ]
+  },
+  "about": {
+    "title": "À Propos de Nous",
+    "body": "Il y a deux décennies, Fortune StoneX Monuments a commencé son voyage avec une vision audacieuse : allier sans effort l'intemporalité de la tradition aux possibilités de l'innovation. Notre engagement indéfectible envers la qualité et l'artisanat nous a fait pionniers de l'industrie, livrant des monuments en pierre authentiques et exquis à des clients dans plus de 10 pays à travers le monde."
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "getInTouch": "Contactez-nous",
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "blogs": "Blogs",
+    "contact": "Contact",
+    "copyright": "© {{year}} Fortune Stonex. Tous droits réservés."
+  }
+  ,"contact": {
+    "heroTitle": "Contactez-nous",
+    "heroSubtitle": "Nous serions ravis d'avoir de vos nouvelles. Envoyez-nous un message et nous répondrons dès que possible.",
+    "formTitle": "Envoyez-nous un message",
+    "callUs": "Appelez-nous",
+    "emailUs": "Écrivez-nous",
+    "visitUs": "Visitez-nous",
+    "businessHours": "Heures d'ouverture",
+    "phone": "+91 9251226251",
+    "email": "support@futurestone.com",
+    "address": "123 Business Street, City, State 12345",
+    "hours": "Lun - Ven : 9h00 - 18h00\nSam : 10h00 - 16h00\nDim : Fermé"
+  }
+  ,
+  "monuments_description": "Des monuments majestueux qui définissent des paysages aux pierres tombales personnalisées qui honorent des souvenirs précieux, chaque pièce que nous créons est un témoignage d'art et de précision. Nous comprenons que chaque monument raconte une histoire unique – votre histoire – et nous veillons à ce qu'il résiste à l'épreuve du temps. Notre gamme comprend des pierres tombales intemporelles, des monuments complexes et des accessoires soigneusement conçus tels que des vases et des plaques, chacun fabriqué pour améliorer et personnaliser l'expérience. Avec une approche futuriste et une touche authentique, nous redéfinissons ce que signifie laisser un héritage durable. Chez Fortune StoneX Monuments, nous ne créons pas seulement des monuments ; nous construisons des liens avec le passé, le présent et l'avenir. Authentique. Innovant. Incomparable."
+  ,
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Découvrez notre magnifique collection de produits en pierre haut de gamme",
+    "groups": [
+      { "header": "Pierre tombale", "subtitle": "Collection premium de pierres tombales" },
+      { "header": "Plaque", "subtitle": "Collection premium de plaques" },
+      { "header": "Vases", "subtitle": "Collection premium de vases" }
+    ],
+    "buttonViewDetails": "Voir les détails"
+  },
+  "blog": {
+    "heading": "Dernières œuvres en vedette",
+    "subtitle": "Voici quelques-uns de nos réalisations."
+  }
+  ,
+  "seeMore": "Voir plus",
+  "seeLess": "Voir moins"
+}

@@ -12,9 +12,14 @@ const ProjectCard = ({ imgPath, title, description, blogData }) => {
 
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={imgPath} alt={title} />
+      {/* alt needs to be plain text; make sure caller passes a string title */}
+      <Card.Img variant="top" src={imgPath} alt={typeof title === 'string' ? title : ''} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        {/* title can be JSX if caller wants formatting.  for simple string titles we
+            render them in bold to match previous appearance. */}
+        <Card.Title>
+          {typeof title === 'string' ? <b>{title}</b> : title}
+        </Card.Title>
         <Card.Text>{truncatedDescription}</Card.Text>
         <Button
           variant="primary"
